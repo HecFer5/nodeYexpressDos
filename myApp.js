@@ -3,7 +3,7 @@ let app = express();
 
 module.exports = app;
 
-ruta = __dirname + "/viwes/index.html"
+ruta = __dirname + "boilerplate-express/viwes/index.html"
 
 app.get("/", function (req, res) {
     res.sendFile(ruta);
