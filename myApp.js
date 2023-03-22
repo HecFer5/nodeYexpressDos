@@ -1,11 +1,12 @@
 let express = require('express');
 let app = express();
 
- module.exports = app;
+module.exports = app;
 
- //console.log("Hello World")
-app.get("/", function(req, res) {
-  res.send("Hello Express");
+ruta = __dirname + "/viwes/"
+
+app.get("/", function (req, res) {
+    res.sendFile(ruta);
 });
 
 //app.get("Hello World")
