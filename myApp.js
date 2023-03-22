@@ -3,14 +3,14 @@ let app = express();
 
 module.exports = app;
 
-rutaIndex = __dirname + "/views/index.html"
-rutaEstilo = __dirname + "/public/"
+// rutaIndex = __dirname + "/views/index.html"
+// rutaEstilo = __dirname + "/public/"
+// app.use("/public",express.static(rutaEstilo));
 
-app.get("/", function (req, res) {
-    res.sendFile(rutaIndex);
+app.get("/json", function (req, res) {
+    res.json({"message": "Hello json"});
 });
  
-app.use("/public",express.static(rutaEstilo));
 
 
 
