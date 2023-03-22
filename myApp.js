@@ -3,13 +3,15 @@ let app = express();
 
 module.exports = app;
 
-ruta = __dirname + "boilerplate-express/viwes/index.html"
+rutaIndex = __dirname + "/views/index.html"
+rutaEstilo = __dirname + "/public/style.css"
 
 app.get("/", function (req, res) {
-    res.sendFile(ruta);
+    res.sendFile(rutaIndex);
 });
+ app.use("/",rutaEstilo)
 
-//app.get("Hello World")
+
 
 
 
