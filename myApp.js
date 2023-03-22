@@ -3,7 +3,7 @@ let app = express();
 
 module.exports = app;
 
-ruta = __dirname + "/viwes/"
+ruta = __dirname + "/viwes/index.html"
 
 app.get("/", function (req, res) {
     res.sendFile(ruta);
