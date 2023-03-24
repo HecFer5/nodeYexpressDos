@@ -15,6 +15,8 @@ if (process.env.MESSAGE_STYLE === "uppercase") {
 }
 
 app.get("/", function (req, res) {
+    
+}
     res.json(mensaje);
 });
 
