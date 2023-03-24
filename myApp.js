@@ -8,49 +8,15 @@ module.exports = app;
 // rutaEstilo = __dirname + "/public/"
 // app.use("/public",express.static(rutaEstilo));
 let mensaje = { "message": "Hello json" }
-let respuesta = ""
+let respuesta
+const mySecret = process.env['MESSAGE_STYLE']
 
-if (process.env.MESSAGE_STYLE === "uppercase") {
-    respuesta = mensaje.toUppercase
+if (mySecret === "uppercase") {
+    respuesta = { "message": "Hello json" }.toUpperCase()
+}else{
+  respuesta = { "message": "Hello json" }
 }
 
 app.get("/", function (req, res) {
-    res.json(mensaje);
+    res.json(respuesta);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
