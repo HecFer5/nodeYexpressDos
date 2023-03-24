@@ -11,12 +11,15 @@ let mensaje = { "message": "Hello json" }
 let respuesta
 const mySecret = process.env['MESSAGE_STYLE']
 
-if (mySecret === "uppercase") {
-    respuesta = { "message": "Hello json" }.toUpperCase()
-}else{
-  respuesta = { "message": "Hello json" }
-}
 
 app.get("/", function (req, res) {
+    if (mySecret === "uppercase") {
+    respuesta = { "message": "HELLO JSON" }
     res.json(respuesta);
+}else{
+  respuesta = { "message": "Hello json" }
+  res.json(respuesta);
+}
+
+    
 });
