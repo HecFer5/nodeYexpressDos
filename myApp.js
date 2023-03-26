@@ -1,22 +1,26 @@
 let express = require('express');
 let app = express();
-require('dotenv').config()
 
-//module.exports = app;
-console.log("Hola")
-rutaIndex = __dirname + "/views/index.html"
-rutaEstilo = __dirname + "/public/"
-app.use("/public",express.static(rutaEstilo));
+module.exports = app;
+ 
+app.use("/public",express.static(__dirname + "/public/"));
 
+app.use((req, res ,next) =>{
+  console.log(`${req.method}${req.path} - ${req.ip}`);
+  next()
+  
+})
 
-
+//app.get("/",(req, res)=>{
+//  res.sendFile(__dirname + "/views/index-html")
+//})
+let respuesta
 app.get("/", function (req, res) {
-    if (process.env.MESSAGE_STYLE === "uppercase") {
-    
-    res.json({ "message": "HELLO JSON" });
+    if (process.env['MESSAGE_STYLE'] == "uppercase") {
+  respuesta =  {"message": "HELLO JSON"};
 }else{
-  res.json({ "message": "Hello json" });
+  respuesta = {"message": "Hello json"}
 }
-
+res.json(respuesta);
     
 });
